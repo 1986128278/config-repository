@@ -8,4 +8,4 @@ management:
       exposure:
         include: bus-refresh
 info:
-  test: robert666
+  test: robert
