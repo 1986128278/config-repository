@@ -10,7 +10,7 @@ spring:
     stream:
       bindings:
         hystrixStreamOutput:
-          destination: springCloudHystrixStream
+          destination: turbineStreamInput
 eureka:
   client:
     service-url:
