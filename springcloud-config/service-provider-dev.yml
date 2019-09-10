@@ -2,5 +2,10 @@ eureka:
   client:
     service-url:
       defaultZone: http://robert1:8001/eureka/
+management:
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh
 info:
   test: robert666
