@@ -1,0 +1,27 @@
+spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+  # 走过的坑：使用rabbitmq消息代理   默认不会将输出的流绑定，则turbine-stream取不出数据
+  #解决方式: 1、rabbitmq手动将输入输出绑定，2、添加下面一行配置，通过属性将其绑定
+  cloud:
+    stream:
+      bindings:
+        hystrixStreamOutput:
+          destination: springCloudHystrixStream
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8001/eureka/
+#feign中已经集成了hystrix
+feign:
+  hystrix:
+    enabled: true
+#refresh 获取git更新的配置内容
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream,refresh
