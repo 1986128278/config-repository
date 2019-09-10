@@ -3,4 +3,4 @@ eureka:
     service-url:
       defaultZone: http://robert1:8001/eureka/
 info:
-  test: robert
+  test: robert666
